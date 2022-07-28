@@ -11,3 +11,4 @@
 
 2022.7.28
 1. 配置fabric
+2. 自动化上传代码prepare_deploy，使用方法fab prepare_deploy:<msg>

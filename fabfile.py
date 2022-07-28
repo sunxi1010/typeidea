@@ -108,3 +108,12 @@ def deploy(version, profile):
             env.PYPI_HOST,
         ))
         _reload_supervisoird(env.DEPLOY_PATH, profile)
+
+@task
+def prepare_deploy(msg=None):
+    """ 检查代码，上传源代码
+       
+    """
+    local("./typeidea/manage.py test")
+    local("git add -p && git commit -m %s" % msg)
+    local("git push")
