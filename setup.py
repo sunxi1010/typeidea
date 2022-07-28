@@ -6,10 +6,12 @@ setup(
     name='typeidea',
     version='${version}',
     description='Blog System base on Django',
-    author='the5fire',
-    author_email='thefivefire@gmail.com',
-    url='https://www.the5fire.com',
+    long_description='build python package mlops',
+    author='sunxi',
+    author_email='sunxi1010@126.com',
+    url='https://github.com/sunxi1010',
     license='MIT',
+    # 把那些文件打到包里
     packages=find_packages('typeidea'),
     package_dir={'': 'typeidea'},
     # package_data={'': [    # 打包数据文件，方法一
@@ -19,9 +21,9 @@ setup(
     install_requires=[
         'django~=2.0',
         'gunicorn==19.8.1',
-        'supervisor==4.0.0dev0',
+        'supervisor==4.0.0',
         'xadmin==2.0.1',
-        'mysqlclient==1.3.12',
+        'mysqlclient==1.3.13',
         'django-ckeditor==5.4.0',
         'django-rest-framework==0.1.0',
         'django-redis==4.8.0',
@@ -35,6 +37,7 @@ setup(
         'django-debug-toolbar==1.9.1',
         'django-silk==2.0.0',
     ],
+    # 指明要放到bin目录下的可执行文件
     scripts=[
         'typeidea/manage.py',
         'typeidea/typeidea/wsgi.py',
