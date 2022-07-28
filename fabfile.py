@@ -109,11 +109,22 @@ def deploy(version, profile):
         ))
         _reload_supervisoird(env.DEPLOY_PATH, profile)
 
+def test():
+    local("./typeidea/manage.py test")
+
+def commit(msg):
+    local("git add -p && git commit -m %s" % msg)
+
+def push():
+    local("git push")
+
+
+
 @task
 def prepare_deploy(msg=None):
     """ 检查代码，上传源代码
        
     """
-    local("./typeidea/manage.py test")
-    local("git add -p && git commit -m %s" % msg)
-    local("git push")
+    test()
+    commit(msg)
+    push()
