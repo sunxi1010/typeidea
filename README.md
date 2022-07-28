@@ -12,3 +12,5 @@
 2022.7.28
 1. 配置fabric
 2. 自动化上传代码prepare_deploy，使用方法fab prepare_deploy:<msg>
+3. 重构prepare_deploy函数，分解成子任务
+4. 创建plantuml，绘制uml
